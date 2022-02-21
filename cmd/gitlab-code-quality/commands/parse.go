@@ -50,7 +50,11 @@ func transformCmdF(command *cobra.Command, args []string) error {
 		byteValue, _ := ioutil.ReadAll(bytes.NewReader(reportFromFile))
 
 		var result model.CheckStyleResult
-		xml.Unmarshal(byteValue, &result)
+		err = xml.Unmarshal(byteValue, &result)
+
+		if err != nil {
+			return errors.New("could not parse the provided file, it must be a xml checkstyle compliant")
+		}
 
 		// Assemble Gitlab report compatible structure
 		for _, file := range result.Files {
