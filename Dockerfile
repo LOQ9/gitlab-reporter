@@ -9,7 +9,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN make server-linux
+RUN make build-linux
 
 # Final container
 FROM alpine:3.14

@@ -24,6 +24,8 @@ func init() {
 	TransformCmd.Flags().StringSlice("source-report", []string{""}, "Source Report")
 	TransformCmd.Flags().StringSlice("reporter-tool", []string{""}, "Reporter Tool")
 	TransformCmd.Flags().StringSlice("report-type", []string{"issue"}, "Report Type")
+	TransformCmd.Flags().Bool("output", false, "Output")
+	TransformCmd.Flags().String("output-file", "gl-code-quality-report.json", "Output File Name")
 	RootCmd.AddCommand(TransformCmd)
 }
 
@@ -31,6 +33,8 @@ func transformCmdF(command *cobra.Command, args []string) error {
 	sourceReportArg, _ := command.Flags().GetStringSlice("source-report")
 	reporterToolArg, _ := command.Flags().GetStringSlice("reporter-tool")
 	reportTypeArg, _ := command.Flags().GetStringSlice("report-type")
+	outputFileArg, _ := command.Flags().GetString("output-file")
+	outputArg, _ := command.Flags().GetBool("output")
 
 	reporterTool := make([]string, len(sourceReportArg))
 	copy(reporterTool, reporterToolArg)
@@ -78,6 +82,22 @@ func transformCmdF(command *cobra.Command, args []string) error {
 
 	jsonReport, _ := model.ReportListToJSON(parsedReport)
 	fmt.Printf("%s\n", jsonReport)
+
+	if outputArg {
+		f, err := os.Create(outputFileArg)
+
+		if err != nil {
+			return err
+		}
+
+		defer f.Close()
+
+		_, err2 := f.Write(jsonReport)
+
+		if err2 != nil {
+			return err2
+		}
+	}
 
 	return nil
 }
