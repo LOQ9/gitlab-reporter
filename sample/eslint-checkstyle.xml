@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<checkstyle version="4.3">
+	<file name="/home/user/sample-ts/src/api/graphql/access-token.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/account-folder.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/account-template-folder.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/account-template.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/account.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/action.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/agenda-job-data.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/agenda-job.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/alarm.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/alert.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/anchor-image.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/anchor.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/configuration.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/dashboard-folder.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/dashboard.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/device.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/element-site-report-config.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/element-site-report-folder.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/element-site-report.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/element-template-folder.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/element-template.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/element.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/file.ts">
+		<error line="69" column="25" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+	</file>
+	<file name="/home/user/sample-ts/src/api/graphql/index.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/input.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/issue-catalog-draft.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/issue-catalog-folder.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/issue-catalog.ts">
+		<error line="4" column="28" severity="warning" message="&apos;arg&apos; is defined but never used. (@typescript-eslint/no-unused-vars)" source="eslint.rules.@typescript-eslint/no-unused-vars" />
+		<error line="14" column="10" severity="warning" message="&apos;NotFoundError&apos; is defined but never used. (@typescript-eslint/no-unused-vars)" source="eslint.rules.@typescript-eslint/no-unused-vars" />
+		<error line="15" column="8" severity="warning" message="&apos;_&apos; is defined but never used. (@typescript-eslint/no-unused-vars)" source="eslint.rules.@typescript-eslint/no-unused-vars" />
+		<error line="17" column="3" severity="warning" message="&apos;getMatchPipelineFromLabelFilter&apos; is defined but never used. (@typescript-eslint/no-unused-vars)" source="eslint.rules.@typescript-eslint/no-unused-vars" />
+		<error line="18" column="3" severity="warning" message="&apos;TaskTemplateDocument&apos; is defined but never used. (@typescript-eslint/no-unused-vars)" source="eslint.rules.@typescript-eslint/no-unused-vars" />
+	</file>
+	<file name="/home/user/sample-ts/src/api/graphql/issue-report-config.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/issue-report-folder.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/issue-report.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/issue-task-group.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/issue-template-draft.ts">
+		<error line="14" column="10" severity="warning" message="&apos;LabelValueDocument&apos; is defined but never used. (@typescript-eslint/no-unused-vars)" source="eslint.rules.@typescript-eslint/no-unused-vars" />
+		<error line="71" column="31" severity="warning" message="&apos;args&apos; is defined but never used. (@typescript-eslint/no-unused-vars)" source="eslint.rules.@typescript-eslint/no-unused-vars" />
+		<error line="71" column="37" severity="warning" message="&apos;context&apos; is defined but never used. (@typescript-eslint/no-unused-vars)" source="eslint.rules.@typescript-eslint/no-unused-vars" />
+	</file>
+	<file name="/home/user/sample-ts/src/api/graphql/issue-template-folder.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/issue-template.ts">
+		<error line="14" column="3" severity="warning" message="&apos;TaskTemplateGroupDocument&apos; is defined but never used. (@typescript-eslint/no-unused-vars)" source="eslint.rules.@typescript-eslint/no-unused-vars" />
+		<error line="15" column="3" severity="warning" message="&apos;TaskTemplateGroupInput&apos; is defined but never used. (@typescript-eslint/no-unused-vars)" source="eslint.rules.@typescript-eslint/no-unused-vars" />
+		<error line="17" column="10" severity="warning" message="&apos;LabelValueDocument&apos; is defined but never used. (@typescript-eslint/no-unused-vars)" source="eslint.rules.@typescript-eslint/no-unused-vars" />
+		<error line="35" column="31" severity="warning" message="&apos;args&apos; is defined but never used. (@typescript-eslint/no-unused-vars)" source="eslint.rules.@typescript-eslint/no-unused-vars" />
+		<error line="35" column="37" severity="warning" message="&apos;context&apos; is defined but never used. (@typescript-eslint/no-unused-vars)" source="eslint.rules.@typescript-eslint/no-unused-vars" />
+	</file>
+	<file name="/home/user/sample-ts/src/api/graphql/issue.ts">
+		<error line="477" column="38" severity="warning" message="&apos;context&apos; is defined but never used. (@typescript-eslint/no-unused-vars)" source="eslint.rules.@typescript-eslint/no-unused-vars" />
+	</file>
+	<file name="/home/user/sample-ts/src/api/graphql/label-value.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/label.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/marker.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/monitoring.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/notification-push.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/notification-template.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/permission-bundle.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/permission.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/personal-token.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/plugins/add-duplicate-mutation.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/plugins/add-input-types.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/plugins/create-full-issue-catalog.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/plugins/nexus-plugins.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/plugins/permission.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/plugins/rate-limiter.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/profile-template-folder.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/profile-template.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/profile.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/role-folder.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/role.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/scalars.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/site-template-folder.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/site-template.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/site.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/state-machine-folder.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/state-machine-instance.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/state-machine.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/task-mapping.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/task-template-group.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/task-template.ts">
+		<error line="7" column="39" severity="warning" message="&apos;intArg&apos; is defined but never used. (@typescript-eslint/no-unused-vars)" source="eslint.rules.@typescript-eslint/no-unused-vars" />
+		<error line="8" column="25" severity="warning" message="&apos;ValidationError&apos; is defined but never used. (@typescript-eslint/no-unused-vars)" source="eslint.rules.@typescript-eslint/no-unused-vars" />
+		<error line="10" column="8" severity="warning" message="&apos;numberTypeSchema&apos; is defined but never used. (@typescript-eslint/no-unused-vars)" source="eslint.rules.@typescript-eslint/no-unused-vars" />
+		<error line="11" column="10" severity="warning" message="&apos;Types&apos; is defined but never used. (@typescript-eslint/no-unused-vars)" source="eslint.rules.@typescript-eslint/no-unused-vars" />
+	</file>
+	<file name="/home/user/sample-ts/src/api/graphql/task.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/tenant.ts">
+		<error line="5" column="27" severity="warning" message="&apos;ValidationError&apos; is defined but never used. (@typescript-eslint/no-unused-vars)" source="eslint.rules.@typescript-eslint/no-unused-vars" />
+		<error line="174" column="11" severity="error" message="Type string trivially inferred from a string literal, remove type annotation. (@typescript-eslint/no-inferrable-types)" source="eslint.rules.@typescript-eslint/no-inferrable-types" />
+		<error line="175" column="11" severity="error" message="Type string trivially inferred from a string literal, remove type annotation. (@typescript-eslint/no-inferrable-types)" source="eslint.rules.@typescript-eslint/no-inferrable-types" />
+	</file>
+	<file name="/home/user/sample-ts/src/api/graphql/time-series.ts">
+		<error line="91" column="66" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+	</file>
+	<file name="/home/user/sample-ts/src/api/graphql/translation.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/unit-folder.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/unit.ts"></file>
+	<file name="/home/user/sample-ts/src/api/graphql/widget.ts"></file>
+	<file name="/home/user/sample-ts/src/api/rest/alarm.ts"></file>
+	<file name="/home/user/sample-ts/src/api/rest/file.ts"></file>
+	<file name="/home/user/sample-ts/src/api/rest/index.ts">
+		<error line="18" column="30" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+	</file>
+	<file name="/home/user/sample-ts/src/api/rest/issue.ts"></file>
+	<file name="/home/user/sample-ts/src/api/rest/middleware.ts"></file>
+	<file name="/home/user/sample-ts/src/api/rest/mqtt.ts"></file>
+	<file name="/home/user/sample-ts/src/api/rest/saml.ts"></file>
+	<file name="/home/user/sample-ts/src/app.ts"></file>
+	<file name="/home/user/sample-ts/src/configuration.ts"></file>
+	<file name="/home/user/sample-ts/src/context.ts"></file>
+	<file name="/home/user/sample-ts/src/db/index.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/access-token.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/account-template.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/account.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/action.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/agenda-job.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/alarms/alarm.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/alarms/influxdbv2.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/alarms/kapacitor.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/alert-trigger.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/alert.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/anchor-image.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/anchor.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/configuration.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/dashboard.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/device.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/drafts/issue-catalog-draft.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/drafts/issue-template-draft.schema.ts">
+		<error line="133" column="24" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+	</file>
+	<file name="/home/user/sample-ts/src/db/schema/element/element-template.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/element/element.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/file.schema.ts">
+		<error line="1" column="10" severity="warning" message="&apos;ObjectId&apos; is defined but never used. (@typescript-eslint/no-unused-vars)" source="eslint.rules.@typescript-eslint/no-unused-vars" />
+	</file>
+	<file name="/home/user/sample-ts/src/db/schema/folder/account-folder.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/folder/account-template-folder.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/folder/dashboard-folder.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/folder/element-site-report-folder.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/folder/element-template-folder.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/folder/folder.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/folder/issue-catalog-folder.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/folder/issue-report-folder.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/folder/issue-template-folder.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/folder/profile-template-folder.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/folder/role-folder.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/folder/site-template-folder.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/folder/state-machine-folder.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/folder/unit-folder.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/glarId-counter.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/index.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/input/frame.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/input/index.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/input/onResponse.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/input/types/date.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/input/types/datetime.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/input/types/element.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/input/types/file.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/input/types/instruction.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/input/types/label-value.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/input/types/number.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/input/types/signature.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/input/types/site.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/input/types/string.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/input/types/table.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/input/types/time.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/input/types/utils.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/issue/catalog/approval.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/issue/catalog/issue.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/issue/catalog/task-mapping.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/issue/instance/issue.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/issue/instance/task-group.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/issue/instance/task.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/issue/report/report-config.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/issue/report/report.schema.ts">
+		<error line="17" column="24" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="63" column="11" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="259" column="11" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="260" column="12" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="273" column="11" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+	</file>
+	<file name="/home/user/sample-ts/src/db/schema/issue/template/issue.schema.ts">
+		<error line="2" column="36" severity="warning" message="&apos;Types&apos; is defined but never used. (@typescript-eslint/no-unused-vars)" source="eslint.rules.@typescript-eslint/no-unused-vars" />
+		<error line="7" column="9" severity="warning" message="&apos;LabelValueSchema&apos; is defined but never used. (@typescript-eslint/no-unused-vars)" source="eslint.rules.@typescript-eslint/no-unused-vars" />
+	</file>
+	<file name="/home/user/sample-ts/src/db/schema/issue/template/task-group.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/issue/template/task-input-history.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/issue/template/task-template.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/label-value.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/label.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/marker.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/monitoring.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/notifications/email.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/notifications/index.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/notifications/push.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/notifications/template.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/password.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/permissions/bundle-permissions.ts">
+		<error line="9" column="3" severity="warning" message="&apos;DynamicRoles&apos; is defined but never used. (@typescript-eslint/no-unused-vars)" source="eslint.rules.@typescript-eslint/no-unused-vars" />
+		<error line="62" column="10" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+	</file>
+	<file name="/home/user/sample-ts/src/db/schema/permissions/permission-bundle.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/permissions/permission.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/permissions/role.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/personal-token.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/plugins/add_bin.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/plugins/add_folder.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/plugins/add_label-values.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/plugins/add_multi_tenancy.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/plugins/add_ownership.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/plugins/add_protected.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/plugins/add_soft-delete.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/plugins/add_tree-structure.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/plugins/global/unset-null-fields.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/plugins/global/update-method.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/plugins/global/validateRef.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/plugins/index.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/profile-template.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/profile.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/report/element-site/report-config.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/report/element-site/report.schema.ts">
+		<error line="18" column="24" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="60" column="11" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="146" column="11" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="147" column="12" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="160" column="11" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+	</file>
+	<file name="/home/user/sample-ts/src/db/schema/report/issue/report-config.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/report/issue/report.schema.ts">
+		<error line="17" column="24" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="63" column="11" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="259" column="11" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="260" column="12" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="273" column="11" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+	</file>
+	<file name="/home/user/sample-ts/src/db/schema/site-template.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/site.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/state-machine-instance.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/state-machine.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/template.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/tenant.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/translation.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/unit.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/widgets/dataset-types/action/actions-count.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/widgets/dataset-types/action/actions-filters.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/widgets/dataset-types/action/actions-pipelines.ts">
+		<error line="4" column="47" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="4" column="61" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="81" column="41" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="81" column="56" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="138" column="50" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="138" column="64" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="217" column="44" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="217" column="59" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="274" column="55" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="274" column="69" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="358" column="49" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="358" column="64" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="420" column="19" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+	</file>
+	<file name="/home/user/sample-ts/src/db/schema/widgets/dataset-types/action/index.ts">
+		<error line="1" column="8" severity="warning" message="&apos;_&apos; is defined but never used. (@typescript-eslint/no-unused-vars)" source="eslint.rules.@typescript-eslint/no-unused-vars" />
+		<error line="45" column="65" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="89" column="21" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+	</file>
+	<file name="/home/user/sample-ts/src/db/schema/widgets/dataset-types/issue/index.ts">
+		<error line="1" column="8" severity="warning" message="&apos;_&apos; is defined but never used. (@typescript-eslint/no-unused-vars)" source="eslint.rules.@typescript-eslint/no-unused-vars" />
+		<error line="45" column="64" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="88" column="21" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+	</file>
+	<file name="/home/user/sample-ts/src/db/schema/widgets/dataset-types/issue/issues-count.ts">
+		<error line="4" column="20" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="10" column="63" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+	</file>
+	<file name="/home/user/sample-ts/src/db/schema/widgets/dataset-types/issue/issues-duration.ts">
+		<error line="10" column="70" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+	</file>
+	<file name="/home/user/sample-ts/src/db/schema/widgets/dataset-types/issue/issues-filters.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/widgets/dataset-types/issue/issues-pipelines.ts">
+		<error line="3" column="47" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="3" column="61" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="79" column="41" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="79" column="56" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="136" column="50" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="136" column="64" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="214" column="44" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="214" column="59" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="271" column="55" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="271" column="69" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="354" column="49" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="354" column="64" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="416" column="19" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+	</file>
+	<file name="/home/user/sample-ts/src/db/schema/widgets/dataset-types/realtime.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/widgets/dataset.schema.ts"></file>
+	<file name="/home/user/sample-ts/src/db/schema/widgets/index.ts">
+		<error line="71" column="23" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+	</file>
+	<file name="/home/user/sample-ts/src/extension.ts"></file>
+	<file name="/home/user/sample-ts/src/index.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1616672864371_rename-canceledBySystem.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1616687784623_refactor-label-values.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1617825608706_reindex.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1617875744454_add_folders_to_tenant_system_docs.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1618484300055_populate-empty-coordinates.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1618837805661_format-date-and-time-inputs.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1618917812192_set-tenant-missing-domains.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1619434641142_role-mappings-to-roles.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1620123844670_fix-dashboards-index.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1620139335749_add-missing-account-to-dashboard.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1621529521945_add-state-machine-instance-as-sub-doc.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1621596460605_refactor-catalog-snapshot.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1621603774377_refactor-catalog-snapshot-issue-record.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1625216670243_add_context_issue_folders.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1626871059428_issue_catalog_restructure.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1626872873368_issue_instance__restructure.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1626876174260_label_notifications_context.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1627467245556_updata_data_on_jobs.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1627637480646_reset_task_id.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1631540840477_set_is_active_true_issue_catalogs.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1631697583852_issue_cancel.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1631785910808_set_position_order_for_state_machines.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1631788267349_update_state_machine_with_pause.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1632997544006_add_finish_manually_workflow.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1633098177114_remove_default_state_machine.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1634043542381_rename_ldap_columns.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1634829318117_rename_alerts_colection.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1636392065067_move_files_to_new_path.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1637157179290_refactor_execution_groups.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1638537314245_widgets_refactor.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1640024165131_add_files_metadata.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1642095271040_issue_approval_structure_fix.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1642604693709_set_issue_for_multiple_scheduling.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1643299175503_set_schedule_next_to_id.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1643898332581_closed_templates.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1643906947002_rename_issues_jobs.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1644944968512_reindex_collection.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1645552806169_rename_issues_task_groups.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1646134610297_element_site_template_inputs_ids.ts">
+		<error line="1" column="10" severity="warning" message="&apos;ElementInput&apos; is defined but never used. (@typescript-eslint/no-unused-vars)" source="eslint.rules.@typescript-eslint/no-unused-vars" />
+		<error line="32" column="23" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+	</file>
+	<file name="/home/user/sample-ts/src/migrations/1646674809590_set_task_template_variant.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1646849317322_delete_jobs_with_issues_delete.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1647355198266_drop_issues_index.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1647519717289_advancedLabelSelection_to_object.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1647602008968_delete_undeleted_site_children.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1647619705337_unset_site_element_if_scheduler_exists.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1647947388200_refactor_glarids.ts"></file>
+	<file name="/home/user/sample-ts/src/migrations/1648484068527_deleted_future_jobs_catalog_deleted.ts"></file>
+	<file name="/home/user/sample-ts/src/router.ts">
+		<error line="7" column="13" severity="warning" message="&apos;userAgent&apos; is defined but never used. (@typescript-eslint/no-unused-vars)" source="eslint.rules.@typescript-eslint/no-unused-vars" />
+	</file>
+	<file name="/home/user/sample-ts/src/service/calendar/index.ts"></file>
+	<file name="/home/user/sample-ts/src/service/file/index.ts">
+		<error line="92" column="94" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="118" column="12" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+	</file>
+	<file name="/home/user/sample-ts/src/service/file/providers/local.ts"></file>
+	<file name="/home/user/sample-ts/src/service/file/providers/s3.ts">
+		<error line="155" column="21" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+	</file>
+	<file name="/home/user/sample-ts/src/service/firebase.ts"></file>
+	<file name="/home/user/sample-ts/src/service/ldap.ts"></file>
+	<file name="/home/user/sample-ts/src/service/logger.ts"></file>
+	<file name="/home/user/sample-ts/src/service/mongo-nexus/filters.ts"></file>
+	<file name="/home/user/sample-ts/src/service/mongo-nexus/helper.ts"></file>
+	<file name="/home/user/sample-ts/src/service/mongo-nexus/index.ts"></file>
+	<file name="/home/user/sample-ts/src/service/mongo-nexus/input-types/create.ts"></file>
+	<file name="/home/user/sample-ts/src/service/mongo-nexus/input-types/index.ts"></file>
+	<file name="/home/user/sample-ts/src/service/mongo-nexus/input-types/sort.ts"></file>
+	<file name="/home/user/sample-ts/src/service/mongo-nexus/input-types/update.ts"></file>
+	<file name="/home/user/sample-ts/src/service/mongo-nexus/input-types/where.ts"></file>
+	<file name="/home/user/sample-ts/src/service/mongo-nexus/object-type-lean.ts"></file>
+	<file name="/home/user/sample-ts/src/service/mongo-nexus/object-type.ts">
+		<error line="1" column="10" severity="warning" message="&apos;ObjectId&apos; is defined but never used. (@typescript-eslint/no-unused-vars)" source="eslint.rules.@typescript-eslint/no-unused-vars" />
+	</file>
+	<file name="/home/user/sample-ts/src/service/pubsub.ts"></file>
+	<file name="/home/user/sample-ts/src/service/redis/index.ts"></file>
+	<file name="/home/user/sample-ts/src/service/saml.ts">
+		<error line="13" column="42" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+		<error line="128" column="33" severity="warning" message="Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)" source="eslint.rules.@typescript-eslint/no-explicit-any" />
+	</file>
+	<file name="/home/user/sample-ts/src/service/time-series/flux.ts"></file>
+	<file name="/home/user/sample-ts/src/service/time-series/index.ts">
+		<error line="64" column="7" severity="error" message="Unexpected lexical declaration in case block. (no-case-declarations)" source="eslint.rules.no-case-declarations" />
+		<error line="75" column="7" severity="error" message="Unexpected lexical declaration in case block. (no-case-declarations)" source="eslint.rules.no-case-declarations" />
+	</file>
+	<file name="/home/user/sample-ts/src/service/time-series/influxV1.ts"></file>
+	<file name="/home/user/sample-ts/src/service/time-series/influxV2.ts"></file>
+	<file name="/home/user/sample-ts/src/types/extension.d.ts">
+		<error line="1" column="17" severity="warning" message="&apos;T&apos; is defined but never used. (@typescript-eslint/no-unused-vars)" source="eslint.rules.@typescript-eslint/no-unused-vars" />
+	</file>
+	<file name="/home/user/sample-ts/src/utils/data.ts"></file>
+	<file name="/home/user/sample-ts/src/utils/date.ts"></file>
+	<file name="/home/user/sample-ts/src/utils/env.ts"></file>
+	<file name="/home/user/sample-ts/src/utils/errors.ts"></file>
+	<file name="/home/user/sample-ts/src/utils/index.ts"></file>
+	<file name="/home/user/sample-ts/src/utils/languagesEnum.ts"></file>
+	<file name="/home/user/sample-ts/src/utils/migrate/index.ts"></file>
+	<file name="/home/user/sample-ts/src/utils/migrate/migration-list.ts"></file>
+	<file name="/home/user/sample-ts/src/utils/migrate/structures/collection.ts"></file>
+	<file name="/home/user/sample-ts/src/utils/migrate/structures/model.ts"></file>
+	<file name="/home/user/sample-ts/src/utils/model-utils.ts"></file>
+	<file name="/home/user/sample-ts/src/utils/recaptchaV3.ts"></file>
+	<file name="/home/user/sample-ts/src/utils/seed/data.ts"></file>
+	<file name="/home/user/sample-ts/src/utils/seed/folders.ts"></file>
+	<file name="/home/user/sample-ts/src/utils/seed/index.ts"></file>
+	<file name="/home/user/sample-ts/src/utils/seed/input-templates.ts"></file>
+	<file name="/home/user/sample-ts/src/utils/seed/permissions.ts"></file>
+	<file name="/home/user/sample-ts/src/utils/seed/roles.ts"></file>
+	<file name="/home/user/sample-ts/src/utils/seed/state-machines.ts"></file>
+	<file name="/home/user/sample-ts/src/utils/seed/templates.ts"></file>
+	<file name="/home/user/sample-ts/src/utils/seed/units.ts"></file>
+	<file name="/home/user/sample-ts/src/utils/seed/utils.ts"></file>
+	<file name="/home/user/sample-ts/src/utils/sentry.ts"></file>
+	<file name="/home/user/sample-ts/src/utils/token.ts"></file>
+	<file name="/home/user/sample-ts/src/utils/version.ts"></file>
+</checkstyle>
