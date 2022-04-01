@@ -2,6 +2,9 @@ package commands
 
 import (
 	"bytes"
+	"crypto/md5"
+	"encoding/binary"
+	"encoding/hex"
 	"encoding/xml"
 	"errors"
 	"fmt"
@@ -10,6 +13,7 @@ import (
 	"os"
 	"strings"
 
+	"github.com/mitchellh/hashstructure/v2"
 	"github.com/spf13/cobra"
 )
 
@@ -25,6 +29,7 @@ func init() {
 	TransformCmd.Flags().StringSlice("reporter-tool", []string{""}, "Reporter Tool")
 	TransformCmd.Flags().StringSlice("report-type", []string{"issue"}, "Report Type")
 	TransformCmd.Flags().Bool("output", false, "Output")
+	TransformCmd.Flags().Bool("debug", false, "Enables debug mode")
 	TransformCmd.Flags().String("output-file", "gl-code-quality-report.json", "Output File Name")
 	RootCmd.AddCommand(TransformCmd)
 }
@@ -35,6 +40,7 @@ func transformCmdF(command *cobra.Command, args []string) error {
 	reportTypeArg, _ := command.Flags().GetStringSlice("report-type")
 	outputFileArg, _ := command.Flags().GetString("output-file")
 	outputArg, _ := command.Flags().GetBool("output")
+	//debugArg, _ := command.Flags().GetBool("debug")
 
 	reporterTool := make([]string, len(sourceReportArg))
 	copy(reporterTool, reporterToolArg)
@@ -63,7 +69,7 @@ func transformCmdF(command *cobra.Command, args []string) error {
 		// Assemble Gitlab report compatible structure
 		for _, file := range result.Files {
 			for _, fileError := range file.Errors {
-				parsedReport = append(parsedReport, &model.Report{
+				errorReport := &model.Report{
 					EngineName: reporterTool[idx],
 					Type:       reportType[idx],
 					CheckName:  fileError.Source,
@@ -75,7 +81,23 @@ func transformCmdF(command *cobra.Command, args []string) error {
 					},
 					Severity:    strings.ToLower(fileError.Severity),
 					Description: fileError.Message,
-				})
+				}
+
+				// Generate an hash of the reported problem
+				hash, err := hashstructure.Hash(errorReport, hashstructure.FormatV2, nil)
+				if err != nil {
+					return err
+				}
+
+				// Convert it to byte array and transform to md5
+				b := make([]byte, 8)
+				binary.LittleEndian.PutUint64(b, uint64(hash))
+
+				hasher := md5.New()
+				hasher.Write(b)
+				errorReport.Fingerprint = hex.EncodeToString(hasher.Sum(nil))
+
+				parsedReport = append(parsedReport, errorReport)
 			}
 		}
 	}
