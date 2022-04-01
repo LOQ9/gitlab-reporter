@@ -19,6 +19,12 @@ Example:
 golangci-lint --out-format checkstyle run ./...
 ```
 
+Generating a single report  
 ```
 go run cmd/gitlab-code-quality/main.go transform --source-report sample/eslint-checkstyle.xml --reporter-tool eslint
+```
+
+Generating a combined report  
+```
+go run cmd/gitlab-code-quality/main.go transform --source-report sample/eslint-checkstyle.xml --source-report sample/golang-checkstyle.xml --reporter-tool eslint --reporter-tool golangci-lint
 ```
