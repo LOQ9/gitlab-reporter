@@ -1,6 +1,7 @@
 # gitlab-code-quality
-Gitlab Code Quality is a tool that merges multiple files from several code linters and outputs them combined using the code climate file format.  
-This is allows to use the prefered linting tools and combining them with the Gitlab Code Quality Widget (https://docs.gitlab.com/ee/user/project/merge_requests/code_quality.html#code-quality-widget). 
+Gitlab Code Quality is a tool that merges multiple files from several code linters and outputs them combined using the code climate file format.
+This allows the use of preferred linting tools and combining them with the Gitlab Code Quality Widget 
+(https://docs.gitlab.com/ee/user/project/merge_requests/code_quality.html#code-quality-widget). 
 
 ## Usage & Examples
 
