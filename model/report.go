@@ -61,17 +61,24 @@ func ReportListToJSON(r []*Report) ([]byte, error) {
 }
 
 func (r *Report) GetCheckName() string {
-	checkNameSplit := strings.Split(r.CheckName, "/")
+	switch r.EngineName {
+	case "eslint":
+		checkNameSplit := strings.Split(r.CheckName, "/")
+		r.CheckName = checkNameSplit[len(checkNameSplit)-1]
+	}
 
-	return checkNameSplit[len(checkNameSplit)-1]
+	return r.CheckName
 }
 
 func (r *Report) GetCategories() []string {
 
 	r.Categories = []string{Style}
 
-	if r.EngineName == "eslint" {
-		r.Categories = []string{eslintCategory[r.CheckName]}
+	switch r.EngineName {
+	case "eslint":
+		if eslintCategory[r.CheckName] != "" {
+			r.Categories = []string{eslintCategory[r.CheckName]}
+		}
 	}
 
 	return r.Categories
