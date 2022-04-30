@@ -1,11 +1,14 @@
 package model
 
-import "encoding/json"
+import (
+	"encoding/json"
+	"strings"
+)
 
 type Report struct {
 	EngineName        string         `json:"engine_name"`
 	Fingerprint       string         `json:"fingerprint"`
-	Categories        []string       `json:"categories"`
+	Categories        []string       `json:"categories,omitempty"`
 	CheckName         string         `json:"check_name"`
 	Content           ReportContent  `json:"content,omitempty"`
 	Description       string         `json:"description"`
@@ -15,6 +18,15 @@ type Report struct {
 	Severity          string         `json:"severity"`
 	Type              string         `json:"type"`
 }
+
+const (
+	BugRisk       string = "Bug Risk"
+	Clarity              = "Clarity"
+	Compatibility        = "Compatibility"
+	Complexity           = "Complexity"
+	Security             = "Security"
+	Style                = "Style"
+)
 
 type ReportContent struct {
 	Body string `json:"body"`
@@ -46,4 +58,21 @@ func ReportListToJSON(r []*Report) ([]byte, error) {
 	}
 
 	return e, nil
+}
+
+func (r *Report) GetCheckName() string {
+	checkNameSplit := strings.Split(r.CheckName, "/")
+
+	return checkNameSplit[len(checkNameSplit)-1]
+}
+
+func (r *Report) GetCategories() []string {
+
+	r.Categories = []string{Style}
+
+	if r.EngineName == "eslint" {
+		r.Categories = []string{eslintCategory[r.CheckName]}
+	}
+
+	return r.Categories
 }

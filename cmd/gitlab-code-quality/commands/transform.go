@@ -2,7 +2,7 @@ package commands
 
 import (
 	"bytes"
-	"crypto/md5"
+	"crypto/sha1"
 	"encoding/binary"
 	"encoding/hex"
 	"encoding/xml"
@@ -83,6 +83,9 @@ func transformCmdF(command *cobra.Command, args []string) error {
 					Description: fileError.Message,
 				}
 
+				errorReport.CheckName = errorReport.GetCheckName()
+				errorReport.Categories = errorReport.GetCategories()
+
 				// Generate an hash of the reported problem
 				hash, err := hashstructure.Hash(errorReport, hashstructure.FormatV2, nil)
 				if err != nil {
@@ -93,9 +96,13 @@ func transformCmdF(command *cobra.Command, args []string) error {
 				b := make([]byte, 8)
 				binary.LittleEndian.PutUint64(b, uint64(hash))
 
-				hasher := md5.New()
-				hasher.Write(b)
-				errorReport.Fingerprint = hex.EncodeToString(hasher.Sum(nil))
+				h := sha1.New()
+				h.Write(b)
+				errorReport.Fingerprint = hex.EncodeToString(h.Sum(nil))
+
+				// hasher := md5.New()
+				// hasher.Write(b)
+				// errorReport.Fingerprint = hex.EncodeToString(hasher.Sum(nil))
 
 				parsedReport = append(parsedReport, errorReport)
 			}
