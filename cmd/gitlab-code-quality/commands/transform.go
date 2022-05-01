@@ -2,9 +2,6 @@ package commands
 
 import (
 	"bytes"
-	"crypto/sha1"
-	"encoding/binary"
-	"encoding/hex"
 	"encoding/xml"
 	"errors"
 	"fmt"
@@ -13,7 +10,6 @@ import (
 	"os"
 	"strings"
 
-	"github.com/mitchellh/hashstructure/v2"
 	"github.com/spf13/cobra"
 )
 
@@ -75,8 +71,15 @@ func transformCmdF(command *cobra.Command, args []string) error {
 					CheckName:  fileError.Source,
 					Location: model.ReportLocation{
 						Path: file.Name,
-						Lines: model.ReportLocationLines{
-							Begin: fileError.Line,
+						Positions: model.ReportLocationPositions{
+							Begin: model.ReportLocationPositionsData{
+								Line:   fileError.Line,
+								Column: fileError.Column,
+							},
+							End: model.ReportLocationPositionsData{
+								Line:   fileError.Line,
+								Column: fileError.Column,
+							},
 						},
 					},
 					Severity:    strings.ToLower(fileError.Severity),
@@ -85,24 +88,7 @@ func transformCmdF(command *cobra.Command, args []string) error {
 
 				errorReport.CheckName = errorReport.GetCheckName()
 				errorReport.Categories = errorReport.GetCategories()
-
-				// Generate an hash of the reported problem
-				hash, err := hashstructure.Hash(errorReport, hashstructure.FormatV2, nil)
-				if err != nil {
-					return err
-				}
-
-				// Convert it to byte array and transform to md5
-				b := make([]byte, 8)
-				binary.LittleEndian.PutUint64(b, uint64(hash))
-
-				h := sha1.New()
-				h.Write(b)
-				errorReport.Fingerprint = hex.EncodeToString(h.Sum(nil))
-
-				// hasher := md5.New()
-				// hasher.Write(b)
-				// errorReport.Fingerprint = hex.EncodeToString(hasher.Sum(nil))
+				errorReport.Fingerprint = errorReport.ComputeFingerprint()
 
 				parsedReport = append(parsedReport, errorReport)
 			}
