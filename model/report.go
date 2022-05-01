@@ -31,6 +31,12 @@ const (
 	Complexity           = "Complexity"
 	Security             = "Security"
 	Style                = "Style"
+
+	SeverityInfo     = "info"
+	SeverityMinor    = "minor"
+	SeverityMajor    = "major"
+	SeverityCritical = "critical"
+	SeverityBlocker  = "blocker"
 )
 
 type ReportContent struct {
@@ -74,6 +80,21 @@ func ReportListToJSON(r []*Report) ([]byte, error) {
 	}
 
 	return e, nil
+}
+
+func (r *Report) SetSeverity(severity string) string {
+	reportSeverity := strings.ToLower(severity)
+
+	switch reportSeverity {
+	case "info":
+		return SeverityInfo
+	case "warning":
+		return SeverityMinor
+	case "error":
+		return SeverityMajor
+	}
+
+	return reportSeverity
 }
 
 func (r *Report) GetCheckName() string {

@@ -8,7 +8,6 @@ import (
 	"gitlab-code-quality/model"
 	"io/ioutil"
 	"os"
-	"strings"
 
 	"github.com/spf13/cobra"
 )
@@ -82,10 +81,10 @@ func transformCmdF(command *cobra.Command, args []string) error {
 							},
 						},
 					},
-					Severity:    strings.ToLower(fileError.Severity),
 					Description: fileError.Message,
 				}
 
+				errorReport.Severity = errorReport.SetSeverity(fileError.Severity)
 				errorReport.CheckName = errorReport.GetCheckName()
 				errorReport.Categories = errorReport.GetCategories()
 				errorReport.Fingerprint = errorReport.ComputeFingerprint()
