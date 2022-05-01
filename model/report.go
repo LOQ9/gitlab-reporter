@@ -38,8 +38,8 @@ type ReportContent struct {
 }
 
 type ReportLocation struct {
-	Path      string                  `json:"path"`
-	Lines     ReportLocationLines     `json:"line,omitemptys"`
+	Path string `json:"path"`
+	//Lines     ReportLocationLines     `json:"lines,omitempty"`
 	Positions ReportLocationPositions `json:"positions,omitempty"`
 }
 
@@ -130,4 +130,23 @@ func (r *Report) ComputeFingerprint() string {
 	}
 
 	return r.Fingerprint
+}
+
+func (r *Report) SetDefaults() {
+
+	if r.Location.Positions.Begin.Line == 0 {
+		r.Location.Positions.Begin.Line = 1
+	}
+
+	if r.Location.Positions.Begin.Column == 0 {
+		r.Location.Positions.Begin.Column = 1
+	}
+
+	if r.Location.Positions.End.Line == 0 {
+		r.Location.Positions.End.Line = 1
+	}
+
+	if r.Location.Positions.End.Column == 0 {
+		r.Location.Positions.End.Column = 1
+	}
 }

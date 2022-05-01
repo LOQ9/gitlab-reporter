@@ -89,6 +89,7 @@ func transformCmdF(command *cobra.Command, args []string) error {
 				errorReport.CheckName = errorReport.GetCheckName()
 				errorReport.Categories = errorReport.GetCategories()
 				errorReport.Fingerprint = errorReport.ComputeFingerprint()
+				errorReport.SetDefaults()
 
 				parsedReport = append(parsedReport, errorReport)
 			}
