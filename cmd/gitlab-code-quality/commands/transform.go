@@ -96,9 +96,12 @@ func transformCmdF(command *cobra.Command, args []string) error {
 	}
 
 	jsonReport, _ := model.ReportListToJSON(parsedReport)
-	fmt.Printf("%s\n", jsonReport)
 
 	if outputArg {
+		fmt.Printf("%s\n", jsonReport)
+	}
+
+	if outputFileArg != "" {
 		f, err := os.Create(outputFileArg)
 
 		if err != nil {
