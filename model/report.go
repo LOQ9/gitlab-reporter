@@ -37,6 +37,8 @@ const (
 	SeverityMajor    = "major"
 	SeverityCritical = "critical"
 	SeverityBlocker  = "blocker"
+
+	ReportTypeIssue = "issue"
 )
 
 type ReportContent struct {
@@ -64,6 +66,36 @@ type ReportLocationPositionsData struct {
 	Column int `json:"column"`
 }
 
+func NewReportFromCheckstyle(checkstyleReport *CheckStyleError, reportType string, reportEngine string, fileName string) *Report {
+	newReport := &Report{
+		EngineName: reportEngine,
+		Type:       reportType,
+		CheckName:  checkstyleReport.Source,
+		Location: ReportLocation{
+			Path: fileName,
+			Positions: ReportLocationPositions{
+				Begin: ReportLocationPositionsData{
+					Line:   checkstyleReport.Line,
+					Column: checkstyleReport.Column,
+				},
+				End: ReportLocationPositionsData{
+					Line:   checkstyleReport.Line,
+					Column: checkstyleReport.Column,
+				},
+			},
+		},
+		Description: checkstyleReport.Message,
+	}
+
+	newReport.SetDefaults()
+	newReport.SetSeverity(checkstyleReport.Severity)
+	newReport.SetCheckName()
+	newReport.SetCategories()
+	newReport.ComputeFingerprint()
+
+	return newReport
+}
+
 func (r *Report) ToJSON() ([]byte, error) {
 	e, err := json.Marshal(r)
 	if err != nil {
@@ -82,32 +114,29 @@ func ReportListToJSON(r []*Report) ([]byte, error) {
 	return e, nil
 }
 
-func (r *Report) SetSeverity(severity string) string {
+func (r *Report) SetSeverity(severity string) {
 	reportSeverity := strings.ToLower(severity)
+	r.Severity = reportSeverity
 
 	switch reportSeverity {
 	case "info":
-		return SeverityInfo
+		r.Severity = SeverityInfo
 	case "warning":
-		return SeverityMinor
+		r.Severity = SeverityMinor
 	case "error":
-		return SeverityMajor
+		r.Severity = SeverityMajor
 	}
-
-	return reportSeverity
 }
 
-func (r *Report) GetCheckName() string {
+func (r *Report) SetCheckName() {
 	switch r.EngineName {
 	case "eslint":
 		checkNameSplit := strings.Split(r.CheckName, "/")
 		r.CheckName = checkNameSplit[len(checkNameSplit)-1]
 	}
-
-	return r.CheckName
 }
 
-func (r *Report) GetCategories() []string {
+func (r *Report) SetCategories() {
 
 	r.Categories = []string{Style}
 
@@ -117,11 +146,9 @@ func (r *Report) GetCategories() []string {
 			r.Categories = []string{eslintCategory[r.CheckName]}
 		}
 	}
-
-	return r.Categories
 }
 
-func (r *Report) ComputeFingerprint() string {
+func (r *Report) ComputeFingerprint() {
 
 	issueReport := Report{
 		CheckName:   r.CheckName,
@@ -132,7 +159,7 @@ func (r *Report) ComputeFingerprint() string {
 	// Generate an hash of the reported problem
 	hash, err := hashstructure.Hash(issueReport, hashstructure.FormatV2, nil)
 	if err != nil {
-		return ""
+		return
 	}
 
 	// Convert it to byte array and transform to md5
@@ -149,8 +176,6 @@ func (r *Report) ComputeFingerprint() string {
 		}
 
 	}
-
-	return r.Fingerprint
 }
 
 func (r *Report) SetDefaults() {

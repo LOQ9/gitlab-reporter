@@ -8,6 +8,8 @@ import (
 	"gitlab-code-quality/model"
 	"io/ioutil"
 	"os"
+	"path/filepath"
+	"strings"
 
 	"github.com/spf13/cobra"
 )
@@ -22,10 +24,11 @@ var TransformCmd = &cobra.Command{
 func init() {
 	TransformCmd.Flags().StringSlice("source-report", []string{""}, "Source Report")
 	TransformCmd.Flags().StringSlice("reporter-tool", []string{""}, "Reporter Tool")
-	TransformCmd.Flags().StringSlice("report-type", []string{"issue"}, "Report Type")
+	TransformCmd.Flags().StringSlice("report-type", []string{model.ReportTypeIssue}, "Report Type")
 	TransformCmd.Flags().Bool("output", false, "Output")
 	TransformCmd.Flags().Bool("debug", false, "Enables debug mode")
-	TransformCmd.Flags().String("output-file", "gl-code-quality-report.json", "Output File Name")
+	TransformCmd.Flags().Bool("detect-report", false, "Automatically detect report files")
+	TransformCmd.Flags().String("output-file", "", "Output File Name")
 	RootCmd.AddCommand(TransformCmd)
 }
 
@@ -35,18 +38,36 @@ func transformCmdF(command *cobra.Command, args []string) error {
 	reportTypeArg, _ := command.Flags().GetStringSlice("report-type")
 	outputFileArg, _ := command.Flags().GetString("output-file")
 	outputArg, _ := command.Flags().GetBool("output")
+	detectReportArg, _ := command.Flags().GetBool("detect-report")
 	//debugArg, _ := command.Flags().GetBool("debug")
 
-	reporterTool := make([]string, len(sourceReportArg))
+	sourceReport := make([]string, len(sourceReportArg))
+	copy(sourceReport, sourceReportArg)
+
+	reporterTool := make([]string, len(sourceReport))
 	copy(reporterTool, reporterToolArg)
 
-	reportType := make([]string, len(sourceReportArg))
+	reportType := make([]string, len(sourceReport))
 	copy(reportType, reportTypeArg)
 
 	parsedReport := make([]*model.Report, 0)
 
-	for idx, sourceReport := range sourceReportArg {
-		reportFromFile, err := os.ReadFile(sourceReport)
+	// Detect Report Files Automatically
+	if detectReportArg {
+		matches, err := filepath.Glob("*-*-checkstyle.xml")
+
+		if err == nil && len(matches) > 0 {
+			for _, fileName := range matches {
+				splitFileName := strings.Split(fileName, "-")
+				reporterTool = append(reporterTool, splitFileName[1])
+				reportType = append(reportType, model.ReportTypeIssue)
+				sourceReport = append(sourceReport, fileName)
+			}
+		}
+	}
+
+	for idx, report := range sourceReport {
+		reportFromFile, err := os.ReadFile(report)
 		if err != nil {
 			return errors.New("specified source report was not found")
 		}
@@ -64,32 +85,7 @@ func transformCmdF(command *cobra.Command, args []string) error {
 		// Assemble Gitlab report compatible structure
 		for _, file := range result.Files {
 			for _, fileError := range file.Errors {
-				errorReport := &model.Report{
-					EngineName: reporterTool[idx],
-					Type:       reportType[idx],
-					CheckName:  fileError.Source,
-					Location: model.ReportLocation{
-						Path: file.Name,
-						Positions: model.ReportLocationPositions{
-							Begin: model.ReportLocationPositionsData{
-								Line:   fileError.Line,
-								Column: fileError.Column,
-							},
-							End: model.ReportLocationPositionsData{
-								Line:   fileError.Line,
-								Column: fileError.Column,
-							},
-						},
-					},
-					Description: fileError.Message,
-				}
-
-				errorReport.Severity = errorReport.SetSeverity(fileError.Severity)
-				errorReport.CheckName = errorReport.GetCheckName()
-				errorReport.Categories = errorReport.GetCategories()
-				errorReport.Fingerprint = errorReport.ComputeFingerprint()
-				errorReport.SetDefaults()
-
+				errorReport := model.NewReportFromCheckstyle(fileError, reportType[idx], reporterTool[idx], file.Name)
 				parsedReport = append(parsedReport, errorReport)
 			}
 		}
