@@ -1,6 +1,9 @@
 project_name: gitlab-code-quality
 builds:
-  - env: [CGO_ENABLED=0]
+  - main: ./cmd/gitlab-code-quality
+    id: "gitlab-code-quality"
+    binary: gitlab-code-quality
+    env: [CGO_ENABLED=0]
     goos:
       - linux
       - windows
