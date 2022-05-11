@@ -33,3 +33,4 @@ dockers:
     image_templates:
     - "ghcr.io/loq9/gitlab-code-quality:{{ .Tag }}"
     - "ghcr.io/loq9/gitlab-code-quality:latest"
+    dockerfile: "Dockerfile.minimal"

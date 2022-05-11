@@ -1,0 +1,13 @@
+FROM alpine:3.15
+
+RUN apk update && \
+  apk add --no-cache curl ca-certificates && \
+  rm -rf /var/cache/apk/*
+
+WORKDIR /app
+
+ADD gitlab-code-quality /app/gitlab-code-quality
+RUN chmod u+x /app/gitlab-code-quality
+
+# Start
+ENTRYPOINT [ "/app/gitlab-code-quality" ]

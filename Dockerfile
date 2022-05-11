@@ -9,8 +9,6 @@ WORKDIR /app
 
 COPY . .
 
-RUN ls -la
-RUN cat Makefile
 RUN make build-linux
 
 # Final container
