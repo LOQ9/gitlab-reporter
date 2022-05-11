@@ -1,0 +1,23 @@
+project_name: gitlab-code-quality
+builds:
+  - env: [CGO_ENABLED=0]
+    goos:
+      - linux
+      - windows
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+nfpms:
+- maintainer: Marco Santos <me@marcopsantos.com>
+  description: Gitlab code quality reporter
+  homepage: https://github.com/LOQ9/gitlab-code-quality
+  license: MIT
+  formats:
+  - deb
+  - rpm
+  - apk
+
+archives:
+  -
+    format: binary

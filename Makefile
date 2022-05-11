@@ -1,48 +1,28 @@
 .PHONY: clean build build-mac build-linux
 
+PACKAGE_FOLDER = gitlab-code-quality
+
 export GO111MODULE=on
 export CGO_ENABLED=0
 
-PACKAGE_FOLDER = gitlab-code-quality
-
-# Build Flags
-VERSION ?= $(VERSION:)
-BUILD_NUMBER ?= $(BUILD_NUMBER:)
-BUILD_DATE = $(shell date -u)
-BUILD_HASH = $(shell git rev-parse HEAD)
-
-# If we don't set the build number it defaults to dev
-ifeq ($(VERSION),)
-	VERSION := 0.0.0
-endif
-
-# If we don't set the build number it defaults to dev
-ifeq ($(BUILD_NUMBER),)
-	BUILD_NUMBER := dev
-endif
-
-LDFLAGS += -X "$(PACKAGE_FOLDER)/model.Version=$(VERSION)"
-LDFLAGS += -X "$(PACKAGE_FOLDER)/model.BuildNumber=$(BUILD_NUMBER)"
-LDFLAGS += -X "$(PACKAGE_FOLDER)/model.BuildDate=$(BUILD_DATE)"
-LDFLAGS += -X "$(PACKAGE_FOLDER)/model.BuildHash=$(BUILD_HASH)"
+# Strip debug info
+LDFLAGS += "-s -w"
 
 all: build
 
 build:
-	go build -ldflags '$(LDFLAGS)' -o ./bin/$(PACKAGE_FOLDER) ./cmd/$(PACKAGE_FOLDER)/main.go
+	go build -ldflags $(LDFLAGS) -o ./bin/$(PACKAGE_FOLDER) ./cmd/$(PACKAGE_FOLDER)/main.go
 
 dep-install:
 	go mod download
 
 build-mac:
 	mkdir -p bin/mac
-	$(eval LDFLAGS += -X "$(PACKAGE_FOLDER)/model.Edition=mac")
-	env GOOS=darwin GOARCH=amd64 go build -ldflags '$(LDFLAGS)' -o ./bin/mac/$(PACKAGE_FOLDER) ./cmd/$(PACKAGE_FOLDER)/main.go
+	env GOOS=darwin GOARCH=amd64 go build -ldflags $(LDFLAGS) -o ./bin/mac/$(PACKAGE_FOLDER) ./cmd/$(PACKAGE_FOLDER)/main.go
 
 build-linux:
 	mkdir -p bin/linux
-	$(eval LDFLAGS += -X "$(PACKAGE_FOLDER)/model.Edition=linux")
-	env GOOS=linux GOARCH=amd64 go build -ldflags '$(LDFLAGS)' -o ./bin/linux/$(PACKAGE_FOLDER) ./cmd/$(PACKAGE_FOLDER)/main.go
+	env GOOS=linux GOARCH=amd64 go build -ldflags $(LDFLAGS) -o ./bin/linux/$(PACKAGE_FOLDER) ./cmd/$(PACKAGE_FOLDER)/main.go
 
 package:
 	@ echo Packaging
