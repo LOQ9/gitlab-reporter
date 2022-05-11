@@ -31,6 +31,6 @@ dockers:
   -
     id: gitlab-code-quality
     image_templates:
-    - "ghcr.io/loq9/gitlab-code-quality:{{ .Tag }}"
-    - "ghcr.io/loq9/gitlab-code-quality:latest"
+    - "ghcr.io/loq9/{{ .ProjectName }}:{{ .Tag }}"
+    - "ghcr.io/loq9/{{ .ProjectName }}:latest"
     dockerfile: "Dockerfile.minimal"
