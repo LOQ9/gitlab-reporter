@@ -1,6 +1,7 @@
 project_name: gitlab-code-quality
 builds:
-  - main: ./cmd/gitlab-code-quality
+  -
+    main: ./cmd/gitlab-code-quality
     id: "gitlab-code-quality"
     binary: gitlab-code-quality
     env: [CGO_ENABLED=0]
@@ -12,15 +13,23 @@ builds:
       - amd64
       - arm64
 nfpms:
-- maintainer: Marco Santos <me@marcopsantos.com>
-  description: Gitlab code quality reporter
-  homepage: https://github.com/LOQ9/gitlab-code-quality
-  license: MIT
-  formats:
-  - deb
-  - rpm
-  - apk
+  -
+    maintainer: Marco Santos <me@marcopsantos.com>
+    description: Gitlab code quality reporter
+    homepage: https://github.com/LOQ9/gitlab-code-quality
+    license: MIT
+    formats:
+    - deb
+    - rpm
+    - apk
 
 archives:
   -
     format: binary
+
+dockers:
+  -
+    id: gitlab-code-quality
+    image_templates:
+    - "ghcr.io/loq9/gitlab-code-quality:{{ .Tag }}"
+    - "ghcr.io/loq9/gitlab-code-quality:latest"
