@@ -24,20 +24,6 @@ build-linux:
 	mkdir -p bin/linux
 	env GOOS=linux GOARCH=amd64 go build -ldflags $(LDFLAGS) -o ./bin/linux/$(PACKAGE_FOLDER) ./cmd/$(PACKAGE_FOLDER)/main.go
 
-package:
-	@ echo Packaging
-	@# Remove any old files
-	rm -Rf $(DIST_ROOT)
-
-	@# Create needed directories
-	mkdir -p $(DIST_PATH)/bin
-
-	@# Package webapp
-	mkdir -p $(DIST_PATH)/client
-	cp -RL $(BUILD_WEBAPP_DIR)/${DIST_ROOT}/* $(DIST_PATH)/client
-
-linux-package: package server-linux
-
 lint: check-lint
 	golangci-lint run ./...
 
