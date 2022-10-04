@@ -39,6 +39,8 @@ const (
 	SeverityBlocker  = "blocker"
 
 	ReportTypeIssue = "issue"
+
+	ReportEngineEslint = "eslint"
 )
 
 type ReportContent struct {
@@ -130,7 +132,7 @@ func (r *Report) SetSeverity(severity string) {
 
 func (r *Report) SetCheckName() {
 	switch r.EngineName {
-	case "eslint":
+	case ReportEngineEslint:
 		checkNameSplit := strings.Split(r.CheckName, "/")
 		r.CheckName = checkNameSplit[len(checkNameSplit)-1]
 	}
@@ -141,7 +143,7 @@ func (r *Report) SetCategories() {
 	r.Categories = []string{Style}
 
 	switch r.EngineName {
-	case "eslint":
+	case ReportEngineEslint:
 		if eslintCategory[r.CheckName] != "" {
 			r.Categories = []string{eslintCategory[r.CheckName]}
 		}
@@ -170,7 +172,7 @@ func (r *Report) ComputeFingerprint() {
 	hasher.Write(b)
 
 	switch r.EngineName {
-	case "eslint":
+	case ReportEngineEslint:
 		if r.CheckName == Complexity {
 			r.Fingerprint = hex.EncodeToString(hasher.Sum(nil))
 		}

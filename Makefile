@@ -33,6 +33,9 @@ lint-diff: check-lint
 lint-checkstyle: check-lint
 	golangci-lint --out-format checkstyle run ./...
 
+start:
+	go run cmd/gitlab-code-quality/main.go transform
+
 test:
 	go test -v ./...
 

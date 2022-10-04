@@ -6,8 +6,8 @@ import "encoding/xml"
 // <?xml version="1.0" encoding="utf-8"?><checkstyle version="4.3"><file ...></file>...</checkstyle>
 //
 // References:
-//   - http://checkstyle.sourceforge.net/
-//   - http://eslint.org/docs/user-guide/formatters/#checkstyle
+// http://checkstyle.sourceforge.net/
+// http://eslint.org/docs/user-guide/formatters/#checkstyle
 type CheckStyleResult struct {
 	XMLName xml.Name          `xml:"checkstyle"`
 	Version string            `xml:"version,attr"`
