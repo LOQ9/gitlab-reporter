@@ -12,7 +12,7 @@ COPY . .
 RUN make build-linux
 
 # Final container
-FROM alpine:3.15
+FROM alpine:3.16
 
 WORKDIR /app
 
