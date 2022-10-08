@@ -1,5 +1,5 @@
 # Build
-FROM golang:1.18-alpine AS build
+FROM golang:1.19-alpine AS build
 
 # Install dependencies
 RUN apk update && apk upgrade && apk add --no-cache \
