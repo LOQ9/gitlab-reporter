@@ -10,4 +10,4 @@ ADD gitlab-code-quality /app/gitlab-code-quality
 RUN chmod u+x /app/gitlab-code-quality
 
 # Start
-ENTRYPOINT [ "/app/gitlab-code-quality" ]
+ENTRYPOINT [ "/app/gitlab-code-quality", "transform", "--detect-report", "--output-file", "gl-code-quality-report.json" ]
