@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/LOQ9/gitlab-code-quality/cmd/gitlab-code-quality/commands"
+	"github.com/LOQ9/gitlab-reporter/cmd/gitlab-reporter/commands"
 )
 
 func main() {

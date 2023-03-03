@@ -6,8 +6,8 @@ RUN apk update && \
 
 WORKDIR /app
 
-ADD gitlab-code-quality /app/gitlab-code-quality
-RUN chmod u+x /app/gitlab-code-quality
+ADD gitlab-reporter /app/gitlab-reporter
+RUN chmod u+x /app/gitlab-reporter
 
 # Start
-ENTRYPOINT [ "/app/gitlab-code-quality", "transform", "--detect-report", "--output-file", "gl-code-quality-report.json" ]
+ENTRYPOINT [ "/app/gitlab-reporter", "transform", "--detect-report", "--output-file", "gl-code-quality-report.json" ]

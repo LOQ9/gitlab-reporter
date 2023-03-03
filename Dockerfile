@@ -16,9 +16,9 @@ FROM alpine:3.17
 
 WORKDIR /app
 
-COPY --from=build /app/bin/linux/gitlab-code-quality /app/
+COPY --from=build /app/bin/linux/gitlab-reporter /app/
 
-RUN chmod u+x /app/gitlab-code-quality
+RUN chmod u+x /app/gitlab-reporter
 
 # Start
-ENTRYPOINT [ "/app/gitlab-code-quality", "transform", "--detect-report", "--output-file", "gl-code-quality-report.json" ]
+ENTRYPOINT [ "/app/gitlab-reporter" ]

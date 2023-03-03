@@ -1,9 +1,9 @@
-project_name: gitlab-code-quality
+project_name: gitlab-reporter
 builds:
   -
-    main: ./cmd/gitlab-code-quality
-    id: "gitlab-code-quality"
-    binary: gitlab-code-quality
+    main: ./cmd/gitlab-reporter
+    id: "gitlab-reporter"
+    binary: gitlab-reporter
     env: [CGO_ENABLED=0]
     goos:
       - linux
@@ -16,7 +16,7 @@ nfpms:
   -
     maintainer: Marco Santos <me@marcopsantos.com>
     description: Gitlab code quality reporter
-    homepage: https://github.com/LOQ9/gitlab-code-quality
+    homepage: https://github.com/LOQ9/gitlab-reporter
     license: MIT
     formats:
     - deb
@@ -29,7 +29,7 @@ archives:
 
 dockers:
   -
-    id: gitlab-code-quality
+    id: gitlab-reporter
     image_templates:
     - "ghcr.io/loq9/{{ .ProjectName }}:{{ .Tag }}"
     - "ghcr.io/loq9/{{ .ProjectName }}:latest"
@@ -37,8 +37,8 @@ dockers:
     build_flag_templates:
     - --label=org.opencontainers.image.title={{ .ProjectName }}
     - --label=org.opencontainers.image.description={{ .ProjectName }}
-    - --label=org.opencontainers.image.url=https://github.com/LOQ9/gitlab-code-quality
-    - --label=org.opencontainers.image.source=https://github.com/LOQ9/gitlab-code-quality
+    - --label=org.opencontainers.image.url=https://github.com/LOQ9/gitlab-reporter
+    - --label=org.opencontainers.image.source=https://github.com/LOQ9/gitlab-reporter
     - --label=org.opencontainers.image.version={{ .Version }}
     - --label=org.opencontainers.image.created={{ time "2006-01-02T15:04:05Z07:00" }}
     - --label=org.opencontainers.image.revision={{ .FullCommit }}

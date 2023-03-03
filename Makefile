@@ -1,6 +1,6 @@
 .PHONY: clean build build-mac build-linux
 
-PACKAGE_FOLDER = gitlab-code-quality
+PACKAGE_FOLDER = gitlab-reporter
 
 export GO111MODULE=on
 export CGO_ENABLED=0
@@ -34,7 +34,7 @@ lint-checkstyle: check-lint
 	golangci-lint --out-format checkstyle run ./...
 
 start:
-	go run cmd/gitlab-code-quality/main.go transform
+	go run cmd/gitlab-reporter/main.go transform
 
 test:
 	go test -v ./...

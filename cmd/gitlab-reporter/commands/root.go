@@ -12,7 +12,7 @@ func Run(args []string) error {
 
 // RootCmd ..
 var RootCmd = &cobra.Command{
-	Use:   "gitlab-code-quality",
-	Short: "Gitlab Code Quality",
-	Long:  `Code Quality parser to compatible Gitlab report`,
+	Use:   "gitlab-reporter",
+	Short: "Gitlab Reporter",
+	Long:  `Swiss army knife reporter tool for Gitlab`,
 }
