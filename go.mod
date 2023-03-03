@@ -1,4 +1,4 @@
-module gitlab-code-quality
+module github.com/LOQ9/gitlab-code-quality
 
 go 1.20
 

@@ -5,11 +5,12 @@ import (
 	"encoding/xml"
 	"errors"
 	"fmt"
-	"gitlab-code-quality/model"
 	"io/ioutil"
 	"os"
 	"path/filepath"
 	"strings"
+
+	"github.com/LOQ9/gitlab-code-quality/model"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"

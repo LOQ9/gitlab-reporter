@@ -1,8 +1,9 @@
 package main
 
 import (
-	"gitlab-code-quality/cmd/gitlab-code-quality/commands"
 	"os"
+
+	"github.com/LOQ9/gitlab-code-quality/cmd/gitlab-code-quality/commands"
 )
 
 func main() {
